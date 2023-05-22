@@ -1,20 +1,14 @@
+# coding: utf-8
+
 import matplotlib.pyplot as plt
-
-
-x1=0
-x2=3
-y=0
-bar_height=5
-between_interval=10
-n=6
 
 
 def cantor_set(x1,x2,y,n,
                bar_height=5,between_interval=10):
     """
-    Cantor set is one of the simplest fractal shape where at each iteration,
-    we divide each bar into three equal parts and remove the mid part
-    from each bar and keep the rest effectively creating a binary tree
+    Cantor set is one of the simplest fractal shape where we start with a simple line,
+    divide into three equal parts, erase the middle of the line,
+    repeat step 2 with the remaining lines, over, and over, and over effectively creating a binary tree.
 
     ref: https://www.math.stonybrook.edu/~scott/Book331/Cantor_sets.html
     """    
@@ -39,6 +33,12 @@ def cantor_set(x1,x2,y,n,
                    y-between_interval,
                    n-1)
 
+x1=0
+x2=3
+y=0
+bar_height=5
+between_interval=10
+n=6
 
 ax=plt.figure(figsize=(10,10))
 plt.fill_between([x1,x2],
